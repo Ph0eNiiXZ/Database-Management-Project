@@ -1,0 +1,120 @@
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (1,"Echo","GYO67DBL4YI",832616,"413420",1,10),
+  (2,"Kameko","LBF98WOG2PJ",575249,"652562",2,13),
+  (3,"Reagan","PXS12WHM7IB",226973,"144536",3,14),
+  (4,"Teegan","DTM37JUB7BC",190528,"52685",4,3),
+  (5,"Carlos","QAI93XEN3CP",431096,"169914",5,13),
+  (6,"Shay","YPQ58LXD2LM",762514,"460729",6,4),
+  (7,"Ivan","APQ70JML1JJ",953845,"401178",7,12),
+  (8,"Honorato","DOJ57ZRJ8KX",58427,"402012",8,5),
+  (9,"Imogene","GLK22ILT0SG",973355,"211419",9,5),
+  (10,"Yasir","YXH46BBR4OH",172832,"618997",10,6);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (11,"Ishmael","EXY64JEX4WR",306905,"129125",11,9),
+  (12,"Libby","WQZ62WCS4FY",966346,"269147",12,9),
+  (13,"Ian","DZC17ZQH3VC",185099,"336726",13,12),
+  (14,"Orli","JWL05SSR8BU",522107,"129302",14,3),
+  (15,"Madeson","HBL11IWC0BP",827632,"13411",15,3),
+  (16,"Victor","BIM38HKY1CK",926239,"131069",16,3),
+  (17,"Maggie","ZNP91RCO6OS",363539,"241400",17,9),
+  (18,"Hadassah","IWB62YVD1IX",909878,"122410",18,10),
+  (19,"Zeph","WKR33NLH2UR",642816,"441175",19,10),
+  (20,"Wing","QRN16XTC7QF",328897,"258153",20,5);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (21,"Dante","ETJ38DNI5KO",856940,"526583",21,8),
+  (22,"Remedios","JQI13TLU4YQ",928653,"490250",22,17),
+  (23,"Ayanna","RIS13XPO7VU",809574,"517093",23,10),
+  (24,"Melyssa","YCB12EEM4TU",968018,"352598",24,5),
+  (25,"Paula","NNN67YJG2XA",110286,"862967",25,11),
+  (26,"Ulla","BBH55ANX2GH",341583,"93672",26,6),
+  (27,"Montana","NSO61NLO4FE",777426,"954886",27,10),
+  (28,"Herman","WLB22TLW5RE",813792,"556464",28,14),
+  (29,"Kermit","RWS92XEE2AB",866009,"653703",29,12),
+  (30,"Reagan","GTE56SRW2XU",956884,"969521",30,20);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (31,"Lunea","WFD76SFU9CG",264927,"160504",31,5),
+  (32,"Seth","BJC23YLB3KO",708754,"33069",32,3),
+  (33,"Desirae","HSO81RQX1NN",524429,"212429",33,10),
+  (34,"Felix","WUL74ZCX1CO",382026,"790930",34,9),
+  (35,"Sade","CDA43HLS6HW",320519,"952958",35,16),
+  (36,"Carl","ABE20CLM8NM",189002,"110105",36,13),
+  (37,"Thaddeus","NOY74FWK7QG",708403,"237496",37,4),
+  (38,"Nell","PNF78HTR4PI",462939,"389015",38,17),
+  (39,"Chiquita","MCQ95AMG5XD",103534,"821585",39,4),
+  (40,"Jorden","ELS26IBN7EH",159578,"69969",40,8);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (41,"Ella","PWK15BRC7YN",382108,"332252",41,14),
+  (42,"Kermit","JER82EIC6QL",90320,"741300",42,16),
+  (43,"Lucas","MYT44YSF5JL",345044,"752635",43,10),
+  (44,"Karleigh","UIW75XMG0WR",830194,"956541",44,6),
+  (45,"Colton","CSB15IEF5OC",767836,"981631",45,11),
+  (46,"Griffin","PFQ48IVC8UX",76281,"733649",46,6),
+  (47,"Clayton","HSX12DVC1SK",452518,"622171",47,13),
+  (48,"Claire","NPJ01AGP5LU",65485,"548224",48,17),
+  (49,"Keefe","NZB74TJM4MK",761686,"808319",49,3),
+  (50,"Orson","SWO36RYB5TO",444308,"52171",50,19);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (51,"Allistair","KBF27JXI2SW",373386,"241463",51,5),
+  (52,"Yetta","ZDF54KFZ3DN",157008,"626357",52,15),
+  (53,"Anika","NVU18EIT4VZ",979632,"619795",53,5),
+  (54,"Cairo","FYH05DOX5FV",930156,"210379",54,13),
+  (55,"Hashim","XKP85EAD5PF",220919,"146036",55,20),
+  (56,"Chava","VHP21JBA4XY",633220,"109879",56,18),
+  (57,"Lilah","RYD87PXS6XQ",840100,"58213",57,5),
+  (58,"Micah","GHN74SUZ2IL",400783,"633252",58,14),
+  (59,"Timothy","FQK32OTG2NW",525255,"614424",59,11),
+  (60,"Slade","ILS88OXB6MJ",346018,"421572",60,5);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (61,"Josephine","BFX71HFC2FM",829780,"393387",61,19),
+  (62,"Quinlan","VMI24TXS8RP",1553,"890588",62,9),
+  (63,"Odessa","KVB65FGG3VH",616025,"31747",63,18),
+  (64,"Thor","YCK33KFJ1JJ",81142,"396630",64,6),
+  (65,"Haviva","SNB74NCC9BU",273289,"247811",65,5),
+  (66,"Berk","ZQC52FQH5MX",560927,"596867",66,16),
+  (67,"Channing","XVT44KYW6IM",842225,"234322",67,15),
+  (68,"Brady","MSB08XUZ3KQ",37628,"765459",68,17),
+  (69,"Lila","WZY91KZC5YW",523844,"22162",69,19),
+  (70,"Vladimir","CBK36ILO7FG",750076,"452528",70,3);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (71,"Leah","IQO50GXT7WD",134644,"507869",71,4),
+  (72,"Tyler","FWC59SNL5HD",764529,"773804",72,14),
+  (73,"Hamish","ONO27IHI1PM",483320,"767488",73,15),
+  (74,"Kevin","CNE21PKO9OT",811409,"511580",74,11),
+  (75,"Hammett","VQG47YAC6AS",143845,"533018",75,5),
+  (76,"Audrey","ALF74HFW6KC",605135,"681446",76,18),
+  (77,"Kaseem","CTH83PTN6JW",228171,"187974",77,13),
+  (78,"April","TAE74KNH7JC",238632,"855469",78,7),
+  (79,"Callum","LLV45HTV5RV",318001,"613573",79,8),
+  (80,"Alfreda","VIJ47YNX1KJ",97048,"736052",80,3);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (81,"Duncan","RCH18ORP7HM",106883,"425760",81,7),
+  (82,"Selma","KWD23RPT6YT",600092,"350535",82,14),
+  (83,"Alec","VCP25WEK8UI",294933,"129855",83,16),
+  (84,"Ferris","NTD01WUX4AJ",382945,"31652",84,3),
+  (85,"Abbot","YJI48CCN6NF",36375,"842931",85,11),
+  (86,"Hop","HYY15LIT3VL",414818,"249062",86,11),
+  (87,"Micah","NSG41TCO3NH",627554,"968516",87,1),
+  (88,"Herrod","NLD81RGQ5TR",4620,"388085",88,7),
+  (89,"Lynn","EFG30KEI8UW",346590,"99911",89,17),
+  (90,"Jermaine","WNL86QOD2YC",488155,"477309",90,19);
+INSERT INTO `player` (`playerID`,`username`,`passwordHash`,`exp`,`money`,`rank_score`,`guildID`)
+VALUES
+  (91,"Christopher","NDK94PBP1MN",349872,"443962",91,5),
+  (92,"Lareina","IXP31DQD7TQ",714807,"232001",92,10),
+  (93,"Joel","REH76EVK1QU",697011,"945882",93,8),
+  (94,"Fuller","FIE81EXV4YO",370429,"366265",94,7),
+  (95,"Lars","OQO18RDP0OP",32492,"887552",95,18),
+  (96,"Gage","WLP55KQO0RR",752950,"591441",96,8),
+  (97,"Wanda","GZA68XUI8PX",706081,"358633",97,4),
+  (98,"Dale","FNZ10UEL5XG",677747,"338857",98,19),
+  (99,"Meghan","XAQ78XBG2XK",184845,"607270",99,19),
+  (100,"Kieran","VZO33YGW6GU",567579,"463013",100,2);
