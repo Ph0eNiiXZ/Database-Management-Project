@@ -11,9 +11,9 @@ the data sample were generated from https://generatedata.com/generator
 - `dungeon_monster`
 - `dungeon_quest_prereqs`
 - `guild`✔️
-- `item`
-- `itemclass`
-- `itemtype`
+- `item`✔️
+- `itemclass`✔️
+- `itemtype`✔️
 - `level`
 - `monster`
 - `monster_dialog`
