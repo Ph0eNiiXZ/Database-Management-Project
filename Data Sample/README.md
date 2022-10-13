@@ -2,9 +2,9 @@
 the data sample were generated from https://generatedata.com/generator
 
 ## Data Checklist
-- [ ] `character`
+- [x] `character`
 - [ ] `character_dialog`
-- [ ] `charclass`
+- [x] `charclass`
 - [ ] `cutscene`
 - [ ] `dungeon`
 - [ ] `dungeon_item_reward`
