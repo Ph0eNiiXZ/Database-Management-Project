@@ -1,7 +1,7 @@
 # Disclaimer!
 the data sample were generated from https://generatedata.com/generator
 
-## Tables
+## Data Checklist
 - [ ] `character`
 - [ ] `character_dialog`
 - [ ] `charclass`
