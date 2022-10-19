@@ -6,8 +6,8 @@ the data sample were generated from https://generatedata.com/generator
 - `character_dialog`
 - `charclass`✔️
 - `cutscene`
-- `dungeon`
-- `dungeon_item_reward`
+- `dungeon`✔️
+- `dungeon_item_reward`✔️
 - `dungeon_monster`
 - `dungeon_quest_prereqs`
 - `guild`✔️
