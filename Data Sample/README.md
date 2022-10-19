@@ -8,7 +8,7 @@ the data sample were generated from https://generatedata.com/generator
 - `cutscene`✔️
 - `dungeon`✔️
 - `dungeon_item_reward`✔️
-- `dungeon_monster`
+- `dungeon_monster`✔️
 - `dungeon_quest_prereqs`
 - `guild`✔️
 - `item`✔️
