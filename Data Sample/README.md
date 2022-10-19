@@ -5,7 +5,7 @@ the data sample were generated from https://generatedata.com/generator
 - `character`✔️
 - `character_dialog`
 - `charclass`✔️
-- `cutscene`
+- `cutscene`✔️
 - `dungeon`✔️
 - `dungeon_item_reward`✔️
 - `dungeon_monster`
