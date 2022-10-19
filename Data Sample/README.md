@@ -14,7 +14,7 @@ the data sample were generated from https://generatedata.com/generator
 - `item`✔️
 - `itemclass`✔️
 - `itemtype`✔️
-- `level`
+- `level`✔️
 - `monster`✔️
 - `monster_dialog`
 - `player`✔️
