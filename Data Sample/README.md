@@ -3,7 +3,7 @@ the data sample were generated from https://generatedata.com/generator
 
 ## Data Checklist
 - `character`✔️
-- `character_dialog`
+- `character_dialog`✔️
 - `charclass`✔️
 - `cutscene`✔️
 - `dungeon`✔️
