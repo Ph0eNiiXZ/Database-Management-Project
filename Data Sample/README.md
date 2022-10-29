@@ -9,7 +9,7 @@ the data sample were generated from https://generatedata.com/generator
 - `dungeon`✔️
 - `dungeon_item_reward`✔️
 - `dungeon_monster`✔️
-- `dungeon_quest_prereqs`
+- `dungeon_quest_prereqs`✔️
 - `guild`✔️
 - `item`✔️
 - `itemclass`✔️
@@ -22,7 +22,7 @@ the data sample were generated from https://generatedata.com/generator
 - `player_quest`
 - `player_rank`
 - `playerinventory`
-- `quest`
+- `quest`✔️
 - `quest_prereqs_dungeon`
 - `quest_prereqs_item`
 - `quest_prereqs_quest`
