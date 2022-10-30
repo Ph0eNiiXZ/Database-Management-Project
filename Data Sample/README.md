@@ -23,7 +23,7 @@ the data sample were generated from https://generatedata.com/generator
 - `player_rank`✔️
 - `playerinventory`✔️
 - `quest`✔️
-- `quest_prereqs_dungeon`
-- `quest_prereqs_item`
-- `quest_prereqs_quest`
-- `quest_reward_item`
+- `quest_prereqs_dungeon`✔️
+- `quest_prereqs_item`✔️
+- `quest_prereqs_quest`✔️
+- `quest_reward_item`✔️
