@@ -16,7 +16,7 @@ the data sample were generated from https://generatedata.com/generator
 - `itemtype`✔️
 - `level`✔️
 - `monster`✔️
-- `monster_dialog`
+- `monster_dialog`✔️
 - `player`✔️
 - `player_character`
 - `player_quest`
