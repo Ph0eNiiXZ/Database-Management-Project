@@ -18,10 +18,10 @@ the data sample were generated from https://generatedata.com/generator
 - `monster`✔️
 - `monster_dialog`✔️
 - `player`✔️
-- `player_character`
-- `player_quest`
-- `player_rank`
-- `playerinventory`
+- `player_character`✔️
+- `player_quest`✔️
+- `player_rank`✔️
+- `playerinventory`✔️
 - `quest`✔️
 - `quest_prereqs_dungeon`
 - `quest_prereqs_item`
