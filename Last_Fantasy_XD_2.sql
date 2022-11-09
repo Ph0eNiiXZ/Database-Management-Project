@@ -176,58 +176,66 @@ CREATE TABLE `player_rank` (
   `score_requirements_per_div` int
 );
 
-ALTER TABLE `player` ADD FOREIGN KEY (`guildID`) REFERENCES `guild` (`guildID`);
+CREATE TABLE transactions (
+  transaction_id varchar(64) PRIMARY KEY NOT NULL,
+  player_id varchar(50) NOT NULL,
+  item_id varchar(16),
+  character_id varchar(16),
+  used boolean NOT NULL
+)
 
-ALTER TABLE `character_dialog` ADD FOREIGN KEY (`cutsceneID`) REFERENCES `cutscene` (`cutsceneID`);
+-- ALTER TABLE `player` ADD FOREIGN KEY (`guildID`) REFERENCES `guild` (`guildID`);
 
-ALTER TABLE `character_dialog` ADD FOREIGN KEY (`characterID`) REFERENCES `character` (`charID`);
+-- ALTER TABLE `character_dialog` ADD FOREIGN KEY (`cutsceneID`) REFERENCES `cutscene` (`cutsceneID`);
 
-ALTER TABLE `monster_dialog` ADD FOREIGN KEY (`cutsceneID`) REFERENCES `cutscene` (`cutsceneID`);
+-- ALTER TABLE `character_dialog` ADD FOREIGN KEY (`characterID`) REFERENCES `character` (`charID`);
 
-ALTER TABLE `monster_dialog` ADD FOREIGN KEY (`monsterID`) REFERENCES `monster` (`monsterID`);
+-- ALTER TABLE `monster_dialog` ADD FOREIGN KEY (`cutsceneID`) REFERENCES `cutscene` (`cutsceneID`);
 
-ALTER TABLE `quest_prereqs_item` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `monster_dialog` ADD FOREIGN KEY (`monsterID`) REFERENCES `monster` (`monsterID`);
 
-ALTER TABLE `quest_prereqs_item` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
+-- ALTER TABLE `quest_prereqs_item` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `quest_prereqs_dungeon` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `quest_prereqs_item` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
 
-ALTER TABLE `quest_prereqs_dungeon` ADD FOREIGN KEY (`dungeonPreReqsID`) REFERENCES `dungeon` (`dungeonID`);
+-- ALTER TABLE `quest_prereqs_dungeon` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `quest_prereqs_quest` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `quest_prereqs_dungeon` ADD FOREIGN KEY (`dungeonPreReqsID`) REFERENCES `dungeon` (`dungeonID`);
 
-ALTER TABLE `quest_prereqs_quest` ADD FOREIGN KEY (`questPreReqsID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `quest_prereqs_quest` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `quest_reward_item` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `quest_prereqs_quest` ADD FOREIGN KEY (`questPreReqsID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `quest_reward_item` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
+-- ALTER TABLE `quest_reward_item` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `player_character` ADD FOREIGN KEY (`playerID`) REFERENCES `player` (`playerID`);
+-- ALTER TABLE `quest_reward_item` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
 
-ALTER TABLE `player_character` ADD FOREIGN KEY (`charID`) REFERENCES `character` (`charID`);
+-- ALTER TABLE `player_character` ADD FOREIGN KEY (`playerID`) REFERENCES `player` (`playerID`);
 
-ALTER TABLE `player_quest` ADD FOREIGN KEY (`playerID`) REFERENCES `player` (`playerID`);
+-- ALTER TABLE `player_character` ADD FOREIGN KEY (`charID`) REFERENCES `character` (`charID`);
 
-ALTER TABLE `player_quest` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `player_quest` ADD FOREIGN KEY (`playerID`) REFERENCES `player` (`playerID`);
 
-ALTER TABLE `playerInventory` ADD FOREIGN KEY (`playerID`) REFERENCES `player` (`playerID`);
+-- ALTER TABLE `player_quest` ADD FOREIGN KEY (`questID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `playerInventory` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
+-- ALTER TABLE `playerInventory` ADD FOREIGN KEY (`playerID`) REFERENCES `player` (`playerID`);
 
-ALTER TABLE `dungeon_quest_prereqs` ADD FOREIGN KEY (`dungeonID`) REFERENCES `dungeon` (`dungeonID`);
+-- ALTER TABLE `playerInventory` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
 
-ALTER TABLE `dungeon_quest_prereqs` ADD FOREIGN KEY (`questPreReqsID`) REFERENCES `quest` (`questID`);
+-- ALTER TABLE `dungeon_quest_prereqs` ADD FOREIGN KEY (`dungeonID`) REFERENCES `dungeon` (`dungeonID`);
 
-ALTER TABLE `dungeon_item_reward` ADD FOREIGN KEY (`dungeonID`) REFERENCES `dungeon` (`dungeonID`);
+-- ALTER TABLE `dungeon_quest_prereqs` ADD FOREIGN KEY (`questPreReqsID`) REFERENCES `quest` (`questID`);
 
-ALTER TABLE `dungeon_item_reward` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
+-- ALTER TABLE `dungeon_item_reward` ADD FOREIGN KEY (`dungeonID`) REFERENCES `dungeon` (`dungeonID`);
 
-ALTER TABLE `dungeon_monster` ADD FOREIGN KEY (`dungeonID`) REFERENCES `dungeon` (`dungeonID`);
+-- ALTER TABLE `dungeon_item_reward` ADD FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`);
 
-ALTER TABLE `dungeon_monster` ADD FOREIGN KEY (`monsterID`) REFERENCES `monster` (`monsterID`);
+-- ALTER TABLE `dungeon_monster` ADD FOREIGN KEY (`dungeonID`) REFERENCES `dungeon` (`dungeonID`);
 
-ALTER TABLE `character` ADD FOREIGN KEY (`charClassID`) REFERENCES `charClass` (`charClassID`);
+-- ALTER TABLE `dungeon_monster` ADD FOREIGN KEY (`monsterID`) REFERENCES `monster` (`monsterID`);
 
-ALTER TABLE `item` ADD FOREIGN KEY (`itemClassID`) REFERENCES `itemClass` (`itemClassID`);
+-- ALTER TABLE `character` ADD FOREIGN KEY (`charClassID`) REFERENCES `charClass` (`charClassID`);
 
-ALTER TABLE `item` ADD FOREIGN KEY (`itemTypeID`) REFERENCES `itemType` (`itemTypeID`);
+-- ALTER TABLE `item` ADD FOREIGN KEY (`itemClassID`) REFERENCES `itemClass` (`itemClassID`);
+
+-- ALTER TABLE `item` ADD FOREIGN KEY (`itemTypeID`) REFERENCES `itemType` (`itemTypeID`);
