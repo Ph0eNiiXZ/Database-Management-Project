@@ -1,0 +1,1 @@
+from .passwordhash import hash
