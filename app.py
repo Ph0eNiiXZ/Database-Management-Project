@@ -13,7 +13,7 @@ class App:
     def _create_user(self, username: str, password: str):
         password_hash = hash(password)
         player_id = randombase64(50)
-        player = Player(player_id, username, password_hash, 0, 0, 0, exists_in_system=False)
+        player = Player(player_id, username, password_hash, 0, 0, 0)
 
         # Execute the player
         player._sql(self._conn, True)

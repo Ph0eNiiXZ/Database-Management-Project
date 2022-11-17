@@ -48,7 +48,6 @@ class Guild:
             conn.commit()
         self.guildEXP += exp_reward
 
-
 @dataclass
 class Quest:
     questID: str
@@ -89,7 +88,6 @@ class Player:
     money: int
     rank_score: float
     guildID: str = None
-    available_in_system: bool = True
 
     def _sql(self, conn: Connection, commit: bool = False):
         insert_sql = f"""
