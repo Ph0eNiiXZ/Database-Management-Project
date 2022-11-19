@@ -116,6 +116,7 @@ CREATE TABLE `player_character` (
 CREATE TABLE `player_quest` (
   `playerID` varchar(50),
   `questID` varchar(32),
+  completed boolean,
   PRIMARY KEY (`playerID`, `questID`)
 );
 
@@ -175,14 +176,6 @@ CREATE TABLE `player_rank` (
   `rank_division_count` int,
   `score_requirements_per_div` int
 );
-
-CREATE TABLE transactions (
-  transaction_id varchar(64) PRIMARY KEY NOT NULL,
-  player_id varchar(50) NOT NULL,
-  item_id varchar(16),
-  character_id varchar(16),
-  used boolean NOT NULL
-)
 
 -- ALTER TABLE `player` ADD FOREIGN KEY (`guildID`) REFERENCES `guild` (`guildID`);
 

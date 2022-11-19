@@ -159,8 +159,6 @@ A player requests to see their necessary data, to be precise, these are the list
 
 ### Case Scenario 3: A player requests and completes a quest
 
-NOTE: This part hasn't been written yet, but I will write it later I promise - TG
-
 #### A player requests a quest
 
 A player will request a quest based on quest ID, then we need to check if the player data matches the requirements to receive the quest. Then we provide them a quest they requested.
@@ -173,7 +171,7 @@ A player will submit a quest based on a quest ID, then we need to give them rewa
 
 A player will buy an item and a character from a shop, we need to check the money and inventory of a player in order to let them buy the item or a character.
 
-### Case Scenario 5: A player / An analyst wants to see the pathway for the quests
+### Case Scenario 5: A player / An analyst wants to see the pathway for the quests **(Done: TG)**
 
 We need to fetch all the quests, then plot them into a directed graph. Possibly we can do the **Bredth's First Search** in order to recommend the quest pathway for players based on the quest predecessors and successors.
 
