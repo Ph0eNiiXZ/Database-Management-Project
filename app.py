@@ -2,6 +2,7 @@ import secrets
 from utils import connect
 from utils.hash import hash
 from utils.roles import Player
+from utils.roles.tables import Quest
 
 def randombase64(length):
     return secrets.token_urlsafe(length * 3 // 4)
