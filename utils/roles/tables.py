@@ -1,6 +1,7 @@
 from sqlite3 import Connection
 from dataclasses import dataclass
 from utils.hash import hash
+from random import random
 
 @dataclass
 class Item:
@@ -78,7 +79,15 @@ class Quest:
         JOIN quest ON quest_prereqs_quest.questID = quest.questID AND quest_prereqs_quest.questPreReqsID = \"{self.questID}\""""
         out = conn.cursor().execute(sql).fetchall()
         return [Quest(*x) for x in out]
-
+    
+    def reward_item_chance(self, conn: Connection):
+        sql = f"""
+            SELECT item.*, quest_reward_item.chance FROM quest_reward_item JOIN item
+            ON quest_reward_item.itemID = item.itemID AND quest_reward_item.questID = "{self.questID}"
+        """
+        out = conn.cursor().execute(sql).fetchall()
+        return [Item(*x) for x in out]
+        
 @dataclass
 class Player:
     playerID: str
@@ -141,6 +150,12 @@ class Player:
         """
         out = conn.cursor().execute(sql).fetchall()
         return [Quest(*x) for x in out]
+    
+    def pending_quest(self, conn: Connection):
+        return list(filter(lambda q: not q.completed, self.quest(conn)))
+    
+    def completed_quest(self, conn: Connection):
+        return list(filter(lambda q: q.completed, self.quest(conn)))
 
     def level(self, conn: Connection):
         sql = f"""
@@ -297,5 +312,73 @@ class Player:
         
         if commit:
             conn.commit()
-        
     
+    def receieve_quest(self, questID: str, conn: Connection, commit: bool = True):
+        # Check the requirements
+        # If the requirements match, give the quest to a player
+
+        quest = conn.cursor().execute(f'SELECT * FROM quest WHERE questID=\"{questID}\"').fetchone()
+        quest = Quest(*quest)
+
+        # Check EXP Requirements
+        if self.exp < quest.prereqsEXP:
+            raise ValueError("A player has not enough EXP to receive the quest")
+
+        # Check Inventory Requirements
+        all_items_required = len(quest.prereqs_item(conn))
+        item_match_quest_sql = f"""
+            SELECT count(playerInventory.itemID) FROM playerInventory
+            WHERE playerInventory.playerID = "{self.playerID}" and playerInventory.itemID in (
+                SELECT itemID FROM quest_prereqs_item WHERE questID = "{questID}"
+            )
+        """
+        item_quest = conn.cursor().execute(item_match_quest_sql).fetchone()[0]
+        if item_quest < all_items_required:
+            raise ValueError("A player has not enough items to receive the quest")
+
+        # Check Quest Completed Requirements
+        all_quests_required = len(quest.prereqs_quest(conn))
+        quest_match_quest_sql = f"""
+            SELECT count(player_quest.questID) FROM player_quest
+            WHERE player_quest.playerID = "{self.playerID}" AND player_quest.completed = true
+            AND player_quest.questID IN (
+                SELECT questprereqsID as questID FROM quest_prereqs_quest WHERE questID = "{questID}"
+            )
+        """
+        quest_completed = conn.cursor().execute(quest_match_quest_sql).fetchone()[0]
+        if quest_completed < all_quests_required:
+            raise ValueError("A player has not completed enough quests in order to receive the quest")
+        
+        # all conditions pass, give the quest to a player
+        update_query = f"""
+        INSERT INTO player_quest (playerID, questID, completed) VALUES ("{self.playerID}", "{questID}", false)
+        """
+        conn.cursor().execute(update_query)
+
+        if commit:
+            conn.commit()
+    
+    def complete_quest(self, questID: str, conn: Connection, commit: bool = True):
+        quest = conn.cursor().execute(f'SELECT * FROM quest WHERE questID=\"{questID}\"').fetchone()
+        quest = Quest(*quest)
+
+        # complete the quest
+        update_query = f"""
+            UPDATE player_quest
+            SET completed = true
+            WHERE playerID = "{self.playerID}" AND questID = "{questID}"
+        """
+        conn.cursor().execute(update_query)
+
+        # update the EXP and money reward
+        self.exp_increase(quest.expReward, conn, False)
+        self.transact(-quest.moneyReward, conn, False)
+
+        # update the item reward
+        item_rewards_chances = quest.reward_item_chance(conn)
+        for item, chance in item_rewards_chances:
+            if random() < chance:
+                self.receive_item(item.itemID, commit=False)
+        
+        if commit:
+            conn.commit()
