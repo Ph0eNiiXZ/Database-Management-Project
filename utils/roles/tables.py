@@ -3,6 +3,9 @@ from dataclasses import dataclass
 from utils.hash import hash
 from random import random
 
+def format_string(s: str):
+    return "\"" + s + "\""
+
 @dataclass
 class Item:
     itemID: str
@@ -86,7 +89,7 @@ class Quest:
             ON quest_reward_item.itemID = item.itemID AND quest_reward_item.questID = "{self.questID}"
         """
         out = conn.cursor().execute(sql).fetchall()
-        return [Item(*x) for x in out]
+        return [(Item(*x[:-1]), x[-1]) for x in out]
         
 @dataclass
 class Player:
@@ -96,7 +99,7 @@ class Player:
     exp: float
     money: int
     rank_score: float
-    guildID: str = None
+    guildID: str = ""
 
     def _sql(self, conn: Connection, commit: bool = False):
         insert_sql = f"""
@@ -111,7 +114,7 @@ class Player:
 
     def guild(self, conn: Connection):
         if not self.guildID:
-            return
+            return ""
         sql = f"SELECT * FROM guild WHERE guildID = \"{self.guildID}\""
         out = conn.cursor().execute(sql).fetchone()
         return Guild(*out[0])
@@ -143,24 +146,25 @@ class Player:
     
     def quest(self, conn: Connection):
         sql = f"""
-            SELECT player_quest.questID, quest.questName, quest.questDescription, quest.prereqsEXP, quest.expReward, quest.moneyReward
+            SELECT player_quest.questID, quest.questName, quest.questDescription, quest.prereqsEXP, quest.expReward, quest.moneyReward,
+            player_quest.completed
             FROM player_quest JOIN player ON player_quest.playerID = player.playerID
             AND player_quest.playerID = "{self.playerID}"
             JOIN quest ON player_quest.questID = quest.questID
         """
         out = conn.cursor().execute(sql).fetchall()
-        return [Quest(*x) for x in out]
+        return [(Quest(*x[:-1]), x[-1]) for x in out]
     
     def pending_quest(self, conn: Connection):
-        return list(filter(lambda q: not q.completed, self.quest(conn)))
+        return list(map(lambda q: q[0], filter(lambda q: not q[-1], self.quest(conn))))
     
     def completed_quest(self, conn: Connection):
-        return list(filter(lambda q: q.completed, self.quest(conn)))
+        return list(map(lambda q: q[0], filter(lambda q: q[-1], self.quest(conn))))
 
     def level(self, conn: Connection):
         sql = f"""
             SELECT max(level.level) FROM level WHERE level.exp_requirements <= (
-                SELECT player.exp FROM player WHERE player.playerID = "1"
+                SELECT player.exp FROM player WHERE player.playerID = "{self.playerID}"
             )
         """
         out = conn.cursor().execute(sql).fetchone()
@@ -226,7 +230,7 @@ class Player:
         update_query = f"""
             UPDATE player
             SET exp = {self.exp + exp_reward}
-            WHERE player_id = "{self.playerID}"
+            WHERE playerID = "{self.playerID}"
         """
         conn.cursor().execute(update_query)
         if commit:
@@ -378,7 +382,7 @@ class Player:
         item_rewards_chances = quest.reward_item_chance(conn)
         for item, chance in item_rewards_chances:
             if random() < chance:
-                self.receive_item(item.itemID, commit=False)
+                self.receive_item(item.itemID, conn, commit=False)
         
         if commit:
             conn.commit()
