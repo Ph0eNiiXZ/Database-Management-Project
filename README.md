@@ -155,6 +155,7 @@ A player will input their **username** and **password** in order to login. We th
 A player requests to see their necessary data, to be precise, these are the list of which should be shown **explicitly** when the player requests their data
 - **Inventory**: Contains some necessary items attributes and amount of the item
 - **Characters**: Contains some necessary character attributes and the experience point of each character
+- **Quest and their status**: Contains the quest name and quest status
 - **Level**: Contains the experience points and the level of a player
 
 ### Case Scenario 3: A player requests and completes a quest
