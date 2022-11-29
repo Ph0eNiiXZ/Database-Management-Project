@@ -188,6 +188,23 @@ class Interface(App):
         print("Characters")
         for i, character in enumerate(characters):
             print(f"{i + 1}: {character.charName} | price: {character.price}")
+    
+    def _show_item_detail(self, item: Item):
+        print(f"Item Name: {item.itemName}")
+        print(f"Item Description: {item.itemDescription}")
+        itemclass = item.item_class(self._conn)
+        itemtype = item.item_type(self._conn)
+        print(f"{itemtype.itemTypeName}: {itemtype.itemTypeDesc}")
+        print(f"{itemclass.itemClassName}: {itemclass.itemClassDesc}")
+        print(f"Price: {item.price}")
+    
+    def _show_character_detail(self, character: Character):
+        print(f"Character Name: {character.charName}")
+        print(f"Character Description: {character.charDescription}")
+        charclass = character.char_class(self._conn)
+        print(f"{charclass.charClassName}: {charclass.charClassDesc}")
+        print(f"HP: {character.charHP} | ATK: {character.charATK} | DEF: {character.charDEF}")
+        print(f"Price: {character.price}")
 
     def _show_quest_detail(self, quest: Quest):
         print("Quest Name:", quest.questName)
@@ -291,6 +308,7 @@ class Interface(App):
             if valid_item:
                 break
         
+        self._show_item_detail(item)
         confirm = input("Are you sure to buy this item? (Y/N):")
         if confirm == "Y":
             try:
@@ -317,6 +335,7 @@ class Interface(App):
             if valid_character:
                 break
         
+        self._show_character_detail(character)
         confirm = input("Are you sure to buy this character? (Y/N):")
         if confirm == "Y":
             try:

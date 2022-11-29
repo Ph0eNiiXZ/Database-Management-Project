@@ -7,6 +7,24 @@ def format_string(s: str):
     return "\"" + s + "\""
 
 @dataclass
+class ItemType:
+    itemTypeID: str
+    itemTypeName: str
+    itemTypeDesc: str
+
+@dataclass
+class ItemClass:
+    itemClassID: str
+    itemClassName: str
+    itemClassDesc: str
+
+@dataclass
+class CharClass:
+    charClassID: str
+    charClassName: str
+    charClassDesc: str
+
+@dataclass
 class Item:
     itemID: str
     itemName: str
@@ -14,6 +32,20 @@ class Item:
     itemClassID: str
     itemDescription: str
     price: int
+
+    def item_type(self, conn: Connection):
+        sql = f"""
+            SELECT * FROM itemType WHERE itemTypeID="{self.itemTypeID}"
+        """
+        out = conn.cursor().execute(sql).fetchone()
+        return ItemType(*out)
+        
+    def item_class(self, conn: Connection):
+        sql = f"""
+            SELECT * FROM itemClass WHERE itemClassID="{self.itemClassID}"
+        """
+        out = conn.cursor().execute(sql).fetchone()
+        return ItemClass(*out)
 
 @dataclass
 class Character:
@@ -25,6 +57,13 @@ class Character:
     charATK: float
     charDEF: float
     price: int
+
+    def char_class(self, conn: Connection):
+        sql = f"""
+            SELECT * FROM charClass WHERE charClassID="{self.charClassID}"
+        """
+        out = conn.cursor().execute(sql).fetchone()
+        return CharClass(*out)
 
 @dataclass
 class Guild:
