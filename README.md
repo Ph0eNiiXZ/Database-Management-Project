@@ -1,8 +1,24 @@
-# Database Management Project: Last Fantasy XD 2
+# Project Title: Video Game Database Management
 
-## About this project
+## Introduction: 
+In this project, we will be creating a database management system for a Multiplayer RPG game with a Guild System and Quests. The database will store information such as player information, guild information, quest information, and more.
 
-A project for SCIM252, Mahidol University, based on the Multiplayer RPG game with Guild System and Quests.
+## Objective:
+The objective of this project is to design and implement a database management system for a Multiplayer RPG game that can store and manage information about players, guilds, quests, and other game-related data. The system should be able to retrieve and update information efficiently, and provide meaningful insights into the game's data.
+
+## Methods:
+- The database management system will be developed using SQL for data storage and retrieval, and Python for data analysis and visualization.
+- A database schema will be designed to represent the relationships between the different entities in the game such as players, guilds, and quests.
+- SQL queries will be used to insert, retrieve, and update data in the database.
+- Python will be used to analyze the data in the database and provide meaningful insights, such as the average player level, the distribution of quests completed, and the number of players in each guild.
+- A user interface will be developed using Python's GUI libraries to allow players to interact with the database and retrieve information about their game progress.
+
+## Expected Outcome:
+The expected outcome of this project is a functioning database management system for a Multiplayer RPG game that can store and manage information about players, guilds, quests, and other game-related data. The system should be able to efficiently retrieve and update information, and provide meaningful insights into the game's data through data analysis and visualization.
+
+## Conclusion:
+In conclusion, this project will provide an opportunity to explore the use of SQL and Python in the development of a database management system for a video game. The results of this project will provide a functional system that can be used to manage and analyze the data of a Multiplayer RPG game with a Guild System and Quests, and can be extended to other video games in the future.
+
 
 ## Code Documentation
 
